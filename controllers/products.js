@@ -17,7 +17,7 @@ module.exports.getProducts = (page, count = 5) => {
   const startingID = (page - 1) * count;
   const endingID = startingID + count;
   const parametrizedValues = [startingID, endingID];
-  const query = 'SELECT id, name, slogan, description, category, default_price, FROM product WHERE id > $1 AND id <= $2;';
+  const query = 'SELECT id, name, slogan, description, category, default_price FROM product WHERE id > $1 AND id <= $2;';
   return queryDB(query, parametrizedValues).then((results) => results.rows[0]);
 };
 
@@ -50,5 +50,3 @@ module.exports.getRelatedProducts = (productId) => {
   const parametrizedValue = [productId];
   return queryDB(query, parametrizedValue).then((results) => results.rows[0].result);
 };
-
-console.log(module.exports.getRelatedProducts(1).then(result => console.log(result)));
