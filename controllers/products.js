@@ -14,11 +14,13 @@ module.exports.getProduct = (productId) => {
 };
 
 module.exports.getProducts = (page, count = 5) => {
-  const startingID = (page - 1) * count;
-  const endingID = startingID + count;
+  const pageNumber = Number(page);
+  const countNumber = Number(count);
+  const startingID = (pageNumber - 1) * countNumber;
+  const endingID = startingID + countNumber;
   const parametrizedValues = [startingID, endingID];
   const query = 'SELECT id, name, slogan, description, category, default_price FROM product WHERE id > $1 AND id <= $2;';
-  return queryDB(query, parametrizedValues).then((results) => results.rows[0]);
+  return queryDB(query, parametrizedValues).then((results) => results.rows);
 };
 
 module.exports.getStyles = (productId) => {
