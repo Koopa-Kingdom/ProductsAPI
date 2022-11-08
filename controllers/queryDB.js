@@ -6,8 +6,8 @@ const pool = new Pool({
   user: process.env.PGUSER,
   database: process.env.PGDATABASE,
   password: process.env.PGPASSWORD,
-  max: 20,
-  idleTimoutMillis: 30000,
+  max: 5,
+  idleTimoutMillis: 0,
   connectionTimeoutMillis: 2000,
 });
 
@@ -15,9 +15,8 @@ module.exports.queryDB = (query, parametrizedValues) => pool
   .connect()
   .then((client) => client
     .query(query, parametrizedValues)
-    .then((res) => {
+    .then((res) => res).finally(() => {
       client.release();
-      return res;
     }));
 /*
 Example
