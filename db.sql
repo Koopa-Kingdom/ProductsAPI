@@ -20,7 +20,7 @@ SET row_security = off;
 
 --
 -- TOC entry 4 (class 2615 OID 2200)
--- Name: public; Type: SCHEMA; Schema: -; Owner: drewhenderson
+-- Name: public; Type: SCHEMA; Schema: -; Owner: ubuntu
 --
 
 -- *not* creating schema, since initdb creates it
@@ -34,7 +34,7 @@ SET default_table_access_method = heap;
 
 --
 -- TOC entry 210 (class 1259 OID 16441)
--- Name: features; Type: TABLE; Schema: public; Owner: drewhenderson
+-- Name: features; Type: TABLE; Schema: public; Owner: ubuntu
 --
 
 CREATE TABLE public.features (
@@ -45,11 +45,11 @@ CREATE TABLE public.features (
 );
 
 
-ALTER TABLE public.features OWNER TO drewhenderson;
+ALTER TABLE public.features OWNER TO ubuntu;
 
 --
 -- TOC entry 216 (class 1259 OID 16546)
--- Name: photos; Type: TABLE; Schema: public; Owner: drewhenderson
+-- Name: photos; Type: TABLE; Schema: public; Owner: ubuntu
 --
 
 CREATE TABLE public.photos (
@@ -60,11 +60,11 @@ CREATE TABLE public.photos (
 );
 
 
-ALTER TABLE public.photos OWNER TO drewhenderson;
+ALTER TABLE public.photos OWNER TO ubuntu;
 
 --
 -- TOC entry 214 (class 1259 OID 16544)
--- Name: photos_id_seq; Type: SEQUENCE; Schema: public; Owner: drewhenderson
+-- Name: photos_id_seq; Type: SEQUENCE; Schema: public; Owner: ubuntu
 --
 
 CREATE SEQUENCE public.photos_id_seq
@@ -75,12 +75,12 @@ CREATE SEQUENCE public.photos_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.photos_id_seq OWNER TO drewhenderson;
+ALTER TABLE public.photos_id_seq OWNER TO ubuntu;
 
 --
 -- TOC entry 3630 (class 0 OID 0)
 -- Dependencies: 214
--- Name: photos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: drewhenderson
+-- Name: photos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ubuntu
 --
 
 ALTER SEQUENCE public.photos_id_seq OWNED BY public.photos.id;
@@ -88,7 +88,7 @@ ALTER SEQUENCE public.photos_id_seq OWNED BY public.photos.id;
 
 --
 -- TOC entry 215 (class 1259 OID 16545)
--- Name: photos_style_id_seq; Type: SEQUENCE; Schema: public; Owner: drewhenderson
+-- Name: photos_style_id_seq; Type: SEQUENCE; Schema: public; Owner: ubuntu
 --
 
 CREATE SEQUENCE public.photos_style_id_seq
@@ -99,12 +99,12 @@ CREATE SEQUENCE public.photos_style_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.photos_style_id_seq OWNER TO drewhenderson;
+ALTER TABLE public.photos_style_id_seq OWNER TO ubuntu;
 
 --
 -- TOC entry 3631 (class 0 OID 0)
 -- Dependencies: 215
--- Name: photos_style_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: drewhenderson
+-- Name: photos_style_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ubuntu
 --
 
 ALTER SEQUENCE public.photos_style_id_seq OWNED BY public.photos.style_id;
@@ -112,7 +112,7 @@ ALTER SEQUENCE public.photos_style_id_seq OWNED BY public.photos.style_id;
 
 --
 -- TOC entry 209 (class 1259 OID 16386)
--- Name: product; Type: TABLE; Schema: public; Owner: drewhenderson
+-- Name: product; Type: TABLE; Schema: public; Owner: ubuntu
 --
 
 CREATE TABLE public.product (
@@ -128,11 +128,11 @@ CREATE TABLE public.product (
 );
 
 
-ALTER TABLE public.product OWNER TO drewhenderson;
+ALTER TABLE public.product OWNER TO ubuntu;
 
 --
 -- TOC entry 211 (class 1259 OID 16457)
--- Name: related; Type: TABLE; Schema: public; Owner: drewhenderson
+-- Name: related; Type: TABLE; Schema: public; Owner: ubuntu
 --
 
 CREATE TABLE public.related (
@@ -142,11 +142,11 @@ CREATE TABLE public.related (
 );
 
 
-ALTER TABLE public.related OWNER TO drewhenderson;
+ALTER TABLE public.related OWNER TO ubuntu;
 
 --
 -- TOC entry 213 (class 1259 OID 16500)
--- Name: skus; Type: TABLE; Schema: public; Owner: drewhenderson
+-- Name: skus; Type: TABLE; Schema: public; Owner: ubuntu
 --
 
 CREATE TABLE public.skus (
@@ -157,11 +157,11 @@ CREATE TABLE public.skus (
 );
 
 
-ALTER TABLE public.skus OWNER TO drewhenderson;
+ALTER TABLE public.skus OWNER TO ubuntu;
 
 --
 -- TOC entry 212 (class 1259 OID 16467)
--- Name: styles; Type: TABLE; Schema: public; Owner: drewhenderson
+-- Name: styles; Type: TABLE; Schema: public; Owner: ubuntu
 --
 
 CREATE TABLE public.styles (
@@ -174,11 +174,11 @@ CREATE TABLE public.styles (
 );
 
 
-ALTER TABLE public.styles OWNER TO drewhenderson;
+ALTER TABLE public.styles OWNER TO ubuntu;
 
 --
 -- TOC entry 3468 (class 2604 OID 16549)
--- Name: photos id; Type: DEFAULT; Schema: public; Owner: drewhenderson
+-- Name: photos id; Type: DEFAULT; Schema: public; Owner: ubuntu
 --
 
 ALTER TABLE ONLY public.photos ALTER COLUMN id SET DEFAULT nextval('public.photos_id_seq'::regclass);
@@ -186,7 +186,7 @@ ALTER TABLE ONLY public.photos ALTER COLUMN id SET DEFAULT nextval('public.photo
 
 --
 -- TOC entry 3469 (class 2604 OID 16550)
--- Name: photos style_id; Type: DEFAULT; Schema: public; Owner: drewhenderson
+-- Name: photos style_id; Type: DEFAULT; Schema: public; Owner: ubuntu
 --
 
 ALTER TABLE ONLY public.photos ALTER COLUMN style_id SET DEFAULT nextval('public.photos_style_id_seq'::regclass);
@@ -194,7 +194,7 @@ ALTER TABLE ONLY public.photos ALTER COLUMN style_id SET DEFAULT nextval('public
 
 --
 -- TOC entry 3473 (class 2606 OID 16447)
--- Name: features features_pkey; Type: CONSTRAINT; Schema: public; Owner: drewhenderson
+-- Name: features features_pkey; Type: CONSTRAINT; Schema: public; Owner: ubuntu
 --
 
 ALTER TABLE ONLY public.features
@@ -203,7 +203,7 @@ ALTER TABLE ONLY public.features
 
 --
 -- TOC entry 3481 (class 2606 OID 16554)
--- Name: photos photos_pkey; Type: CONSTRAINT; Schema: public; Owner: drewhenderson
+-- Name: photos photos_pkey; Type: CONSTRAINT; Schema: public; Owner: ubuntu
 --
 
 ALTER TABLE ONLY public.photos
@@ -212,7 +212,7 @@ ALTER TABLE ONLY public.photos
 
 --
 -- TOC entry 3471 (class 2606 OID 16392)
--- Name: product product_pkey; Type: CONSTRAINT; Schema: public; Owner: drewhenderson
+-- Name: product product_pkey; Type: CONSTRAINT; Schema: public; Owner: ubuntu
 --
 
 ALTER TABLE ONLY public.product
@@ -221,7 +221,7 @@ ALTER TABLE ONLY public.product
 
 --
 -- TOC entry 3475 (class 2606 OID 16461)
--- Name: related related_pkey; Type: CONSTRAINT; Schema: public; Owner: drewhenderson
+-- Name: related related_pkey; Type: CONSTRAINT; Schema: public; Owner: ubuntu
 --
 
 ALTER TABLE ONLY public.related
@@ -230,7 +230,7 @@ ALTER TABLE ONLY public.related
 
 --
 -- TOC entry 3479 (class 2606 OID 16504)
--- Name: skus skus_pkey; Type: CONSTRAINT; Schema: public; Owner: drewhenderson
+-- Name: skus skus_pkey; Type: CONSTRAINT; Schema: public; Owner: ubuntu
 --
 
 ALTER TABLE ONLY public.skus
@@ -239,7 +239,7 @@ ALTER TABLE ONLY public.skus
 
 --
 -- TOC entry 3477 (class 2606 OID 16473)
--- Name: styles styles_pkey; Type: CONSTRAINT; Schema: public; Owner: drewhenderson
+-- Name: styles styles_pkey; Type: CONSTRAINT; Schema: public; Owner: ubuntu
 --
 
 ALTER TABLE ONLY public.styles
@@ -248,7 +248,7 @@ ALTER TABLE ONLY public.styles
 
 --
 -- TOC entry 3482 (class 2606 OID 16448)
--- Name: features fk_product; Type: FK CONSTRAINT; Schema: public; Owner: drewhenderson
+-- Name: features fk_product; Type: FK CONSTRAINT; Schema: public; Owner: ubuntu
 --
 
 ALTER TABLE ONLY public.features
@@ -257,7 +257,7 @@ ALTER TABLE ONLY public.features
 
 --
 -- TOC entry 3483 (class 2606 OID 16462)
--- Name: related fk_product; Type: FK CONSTRAINT; Schema: public; Owner: drewhenderson
+-- Name: related fk_product; Type: FK CONSTRAINT; Schema: public; Owner: ubuntu
 --
 
 ALTER TABLE ONLY public.related
@@ -266,7 +266,7 @@ ALTER TABLE ONLY public.related
 
 --
 -- TOC entry 3484 (class 2606 OID 16474)
--- Name: styles fk_product; Type: FK CONSTRAINT; Schema: public; Owner: drewhenderson
+-- Name: styles fk_product; Type: FK CONSTRAINT; Schema: public; Owner: ubuntu
 --
 
 ALTER TABLE ONLY public.styles
@@ -276,7 +276,7 @@ ALTER TABLE ONLY public.styles
 --
 -- TOC entry 3629 (class 0 OID 0)
 -- Dependencies: 4
--- Name: SCHEMA public; Type: ACL; Schema: -; Owner: drewhenderson
+-- Name: SCHEMA public; Type: ACL; Schema: -; Owner: ubuntu
 --
 
 REVOKE USAGE ON SCHEMA public FROM PUBLIC;
