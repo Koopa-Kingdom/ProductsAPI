@@ -17,7 +17,9 @@ module.exports.queryDB = (query, parametrizedValues) => pool
     .query(query, parametrizedValues)
     .then((res) => res).finally(() => {
       client.release();
-    }));
+    })).on('error', (err) => {
+    console.log('please don\'t fail', err);
+  });
 /*
 Example
 -------------
