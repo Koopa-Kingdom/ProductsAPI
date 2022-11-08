@@ -6,20 +6,26 @@ const pool = new Pool({
   user: process.env.PGUSER,
   database: process.env.PGDATABASE,
   password: process.env.PGPASSWORD,
-  max: 5,
+  max: 50,
   idleTimoutMillis: 0,
-  connectionTimeoutMillis: 2000,
+  connectionTimeoutMillis: 0,
 });
+pool.on('error', (err) => {
+  console.error('unexpected error on idle client', err);
+  process.exit(-1);
+})
 
 module.exports.queryDB = (query, parametrizedValues) => pool
   .connect()
   .then((client) => client
     .query(query, parametrizedValues)
-    .then((res) => res).finally(() => {
+    .then((res) => {
       client.release();
-    })).on('error', (err) => {
-    console.log('please don\'t fail', err);
-  });
+      return res;
+    }).catch((err) => {
+      client.release();
+      console.log(err);
+  }));
 /*
 Example
 -------------
